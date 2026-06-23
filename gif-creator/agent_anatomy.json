@@ -1,0 +1,30 @@
+{
+  "title": "Anatomy of an AI Agent",
+  "loopback": true,
+  "nodes": [
+    {
+      "name": "Brain",
+      "desc": "LLM Reasoning",
+      "color": "cyan",
+      "icon": "cubes"
+    },
+    {
+      "name": "Memory",
+      "desc": "RAG Context",
+      "color": "blue",
+      "icon": "database"
+    },
+    {
+      "name": "Tools",
+      "desc": "API Actions",
+      "color": "emerald",
+      "icon": "target"
+    },
+    {
+      "name": "Loop",
+      "desc": "Autonomy",
+      "color": "indigo",
+      "icon": "sync"
+    }
+  ]
+}

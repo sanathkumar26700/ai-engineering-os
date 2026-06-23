@@ -1,0 +1,30 @@
+{
+  "title": "Almost every AI system runs the same loop",
+  "loopback": true,
+  "nodes": [
+    {
+      "name": "Data",
+      "desc": "Start with examples",
+      "color": "cyan",
+      "icon": "database"
+    },
+    {
+      "name": "Model",
+      "desc": "A function with knobs",
+      "color": "blue",
+      "icon": "cubes"
+    },
+    {
+      "name": "Prediction",
+      "desc": "Make a guess",
+      "color": "emerald",
+      "icon": "target"
+    },
+    {
+      "name": "Feedback",
+      "desc": "Measure the error",
+      "color": "indigo",
+      "icon": "sync"
+    }
+  ]
+}
