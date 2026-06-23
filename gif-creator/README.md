@@ -18,7 +18,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 Alternatively, you can use regular Python virtual environments (`venv`) and `pip`.
 
 ### 2. Setup Dependencies
-If using `uv` (recommended), dependencies are managed automatically through [pyproject.toml](file:///Users/sanathkumar/Documents/ai-engineering-os/gif-creator/pyproject.toml) and [uv.lock](file:///Users/sanathkumar/Documents/ai-engineering-os/gif-creator/uv.lock).
+If using `uv` (recommended), dependencies are managed automatically through [pyproject.toml](pyproject.toml) and [uv.lock](uv.lock).
 
 If you prefer to set up a manual virtual environment:
 ```bash
@@ -28,25 +28,25 @@ pip install -r pyproject.toml
 ```
 
 ### 3. Generate the Default GIF
-To run the default generator which produces `ai_loop.gif`:
+To run the default generator which produces `ai_loop/ai_loop.gif`:
 ```bash
 # Using uv
-uv run generator.py
+uv run ai_loop/generator.py
 
 # Using standard python
-python generator.py
+python ai_loop/generator.py
 ```
 
 ### 4. Generate from a Custom JSON Configuration
-To render a custom flowchart layout using a config file (such as [example_flow.json](file:///Users/sanathkumar/Documents/ai-engineering-os/gif-creator/example_flow.json)):
+To render a custom flowchart layout using a config file (such as [example_flow.json](compiled_flow/example_flow.json)):
 ```bash
 # Using uv
-uv run render_from_config.py example_flow.json
+uv run compiled_flow/render_from_config.py compiled_flow/example_flow.json
 
 # Using standard python
-python render_from_config.py example_flow.json
+python compiled_flow/render_from_config.py compiled_flow/example_flow.json
 ```
-This compiles the custom layout into `compiled_flow.gif`.
+This compiles the custom layout into `compiled_flow/compiled_flow.gif`.
 
 ---
 
@@ -56,7 +56,7 @@ The animation pipeline executes in the following stages:
 
 ### 1. Dynamic Resolution & Grid Calculation
 - **HD Scaling**: The canvas base resolution is `1200x500` scaled by `SCALE = 2` for a sharp, retina-ready `2400x1000` final image.
-- **Auto-Spacing**: The layout engine in [render_from_config.py](file:///Users/sanathkumar/Documents/ai-engineering-os/gif-creator/render_from_config.py) automatically calculates margins, card spacing, and path loops based on the number of nodes defined in the JSON configuration.
+- **Auto-Spacing**: The layout engine in [render_from_config.py](compiled_flow/render_from_config.py) automatically calculates margins, card spacing, and path loops based on the number of nodes defined in the JSON configuration.
 
 ### 2. Rendering Order (Z-Indexing)
 To prevent visual overlap and artifacts, layers are compiled from back to front:
@@ -137,4 +137,4 @@ You can define custom flowcharts by creating a JSON configuration file. Here is 
 
 ---
 
-For design guidelines and technical specs, read the companion [SKILL.md](file:///Users/sanathkumar/Documents/ai-engineering-os/gif-creator/SKILL.md) file.
+For design guidelines and technical specs, read the companion [SKILL.md](SKILL.md) file.

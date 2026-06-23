@@ -429,7 +429,8 @@ def main():
         frames.append(frame_img)
         
     print("\nCompiling HD GIF...")
-    output_path = "ai_loop.gif"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, "ai_loop.gif")
     
     # Save animated GIF using adaptive color quantization
     frames[0].save(

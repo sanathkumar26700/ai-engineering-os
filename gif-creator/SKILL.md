@@ -140,3 +140,11 @@ To achieve premium dynamics, use the following two visual equations:
        palette=Image.Palette.ADAPTIVE
    )
    ```
+
+## 📂 Reference Implementation & Architecture
+
+For a concrete, working example of this skill integrated into a repository, refer to the following project structure, fundamental configs, and architectural implementations:
+
+* **Setup & Usage Guide**: Refer to [README.md](README.md) for environment configuration and run commands.
+* **Basic Loop Implementation**: Refer to [ai_loop/generator.py](ai_loop/generator.py) for the core animation pipeline and trail physics rendering.
+* **Configurable Layout Architecture**: Refer to [compiled_flow/render_from_config.py](compiled_flow/render_from_config.py) for dynamic canvas calculation and JSON schema parsing.

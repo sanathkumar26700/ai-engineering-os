@@ -372,8 +372,18 @@ class ConfigFlowchartEngine:
 def main():
     config_file = sys.argv[1] if len(sys.argv) > 1 else "example_flow.json"
     if not os.path.exists(config_file):
-        print(f"Error: Configuration file '{config_file}' not found.")
-        sys.exit(1)
+        # Try relative to the script's directory
+        fallback_script = os.path.join(os.path.dirname(os.path.abspath(__file__)), config_file)
+        # Try parent of the script's directory
+        fallback_parent = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", config_file)
+        
+        if os.path.exists(fallback_script):
+            config_file = fallback_script
+        elif os.path.exists(fallback_parent):
+            config_file = fallback_parent
+        else:
+            print(f"Error: Configuration file '{config_file}' not found.")
+            sys.exit(1)
         
     print(f"Loading diagram configuration: {config_file}")
     engine = ConfigFlowchartEngine(config_file)
@@ -392,7 +402,8 @@ def main():
         frames.append(frame_img)
         
     print("\nCompiling GIF with adaptive palette...")
-    output_path = "compiled_flow.gif"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_path = os.path.join(script_dir, "compiled_flow.gif")
     
     frames[0].save(
         output_path,
