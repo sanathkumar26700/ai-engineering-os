@@ -1,0 +1,30 @@
+{
+  "title": "The LLM Reliability Loop",
+  "loopback": true,
+  "nodes": [
+    {
+      "name": "Prompt/Input",
+      "desc": "Task & Context",
+      "color": "cyan",
+      "icon": "database"
+    },
+    {
+      "name": "Model Call",
+      "desc": "Probabilistic Output",
+      "color": "blue",
+      "icon": "cubes"
+    },
+    {
+      "name": "Validation",
+      "desc": "Schema & Rule Check",
+      "color": "emerald",
+      "icon": "target"
+    },
+    {
+      "name": "Feedback",
+      "desc": "Programmatic Retry",
+      "color": "indigo",
+      "icon": "sync"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "How a Model Actually Learns",
+  "loopback": true,
+  "nodes": [
+    {
+      "name": "Forward Pass",
+      "desc": "Make predictions",
+      "color": "cyan",
+      "icon": "database"
+    },
+    {
+      "name": "Measure Loss",
+      "desc": "Calculate the error",
+      "color": "emerald",
+      "icon": "target"
+    },
+    {
+      "name": "Compute Gradient",
+      "desc": "Feel the local slope",
+      "color": "blue",
+      "icon": "cubes"
+    },
+    {
+      "name": "Update Weights",
+      "desc": "Take a step downhill",
+      "color": "indigo",
+      "icon": "sync"
+    }
+  ]
+}
